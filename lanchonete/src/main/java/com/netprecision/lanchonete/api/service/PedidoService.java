@@ -37,14 +37,38 @@ public class PedidoService {
         pedidoRepository.save(pedido);
     }
 	
-	public void adicionarProduto(Long idPedido, Long idProduto, int quantidade) {
-		Pedido pedido = this.getPedidoById(idPedido).get();
-		pedido.getProdutos().add(this.getProdutoById(idProduto).get());
+	public void adicionarProduto(Long idPedido, Long idProduto, int quantidade, Pedido pedido) {
+		Pedido pedido_ = this.getPedidoById(idPedido).get();
+		Produto produto = this.getProdutoById(idProduto).get();
+		if (!pedido_.getProdutos().contains(produto)) {
+			pedido_.getProdutos().add(produto);
+		} else {
+			produto.setQuantidade(produto.getQuantidade() + quantidade);
+		}
+		pedido_.setId(pedido.getId());
+		pedido_.setProdutos(pedido.getProdutos());
+		pedido_.setPrecoTotal(pedido.getPrecoTotal());
+		pedido_.setTotalPago(pedido.getTotalPago());
+		pedido_.setTroco(pedido.getTroco());
+		pedido_.setFechado(pedido.getFechado());
+		pedidoRepository.save(pedido_);
 	}
 	
-	public void removerProduto(Long idPedido, Long idProduto, int quantidade) {
-		Pedido pedido = this.getPedidoById(idPedido).get();
-		pedido.getProdutos().remove(this.getProdutoById(idProduto).get());
+	public void removerProduto(Long idPedido, Long idProduto, int quantidade, Pedido pedido) {
+		Pedido pedido_ = this.getPedidoById(idPedido).get();
+		Produto produto = this.getProdutoById(idProduto).get();
+		if (produto.getQuantidade() - quantidade <= 0) {
+			pedido_.getProdutos().remove(produto);
+		} else {
+			produto.setQuantidade(produto.getQuantidade() - quantidade);
+		}
+		pedido_.setId(pedido.getId());
+		pedido_.setProdutos(pedido.getProdutos());
+		pedido_.setPrecoTotal(pedido.getPrecoTotal());
+		pedido_.setTotalPago(pedido.getTotalPago());
+		pedido_.setTroco(pedido.getTroco());
+		pedido_.setFechado(pedido.getFechado());
+		pedidoRepository.save(pedido_);
 	}
 	
 	public Double calcularPrecoById(Long idPedido) {
@@ -57,10 +81,14 @@ public class PedidoService {
 	}
 	
 	public void fecharPedido(Long idPedido, Pedido pedido) {
-		pedido = this.getPedidoById(idPedido).get();
-		pedido.setFechado(true);
-		pedido.setPrecoTotal(calcularPreco(pedido));
-		pedidoRepository.save(pedido);
+		Pedido pedido_ = this.getPedidoById(idPedido).get();
+		pedido_.setId(pedido.getId());
+		pedido_.setProdutos(pedido.getProdutos());
+		pedido_.setTotalPago(pedido.getTotalPago());
+		pedido_.setTroco(pedido.getTroco());
+		pedido_.setFechado(true);
+		pedido_.setPrecoTotal(calcularPreco(pedido));
+		pedidoRepository.save(pedido_);
 	}
 
 }

@@ -36,6 +36,16 @@ public class PedidoController {
     public void criarPedido(@RequestBody Pedido pedido) {
         pedidoService.criarPedido(pedido);
     }
+
+    @PutMapping("/adicionarProduto/{idPedido}/{idProduto}/{quantidade}")
+    public void adicionarProduto(@PathVariable Long idPedido, @PathVariable Long idProduto, @PathVariable int quantidade, @RequestBody Pedido pedido) {
+        pedidoService.adicionarProduto(idPedido, idProduto, quantidade, pedido);
+    }
+
+    @PutMapping("/removerProduto/{idPedido}/{idProduto}/{quantidade}")
+    public void removerProduto(@PathVariable Long idPedido, @PathVariable Long idProduto, @PathVariable int quantidade, @RequestBody Pedido pedido) {
+        pedidoService.removerProduto(idPedido, idProduto, quantidade, pedido);
+    }
 	
 	@PutMapping("/fecharPedido/{id}")
     public void fecharPedido(@PathVariable Long id, @RequestBody Pedido pedido) {
