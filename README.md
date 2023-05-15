@@ -23,12 +23,14 @@
 ### calcular preço pela lista de pedidos
 ### GET http://localhost:8082/pedidos/calcularPreco/{id}
 
+*
 
-calcular preço pelo id
+### calcular preço pelo id
 ### GET http://localhost:8082/pedidos/calcularPrecoById/{id}
 
+*
 
-criar novo pedido
+### criar novo pedido
 ### POST http://localhost:8082/pedidos
 {
 "id": 1,
@@ -39,8 +41,9 @@ criar novo pedido
 "fechado": false
 }
 
+*
 
-adicionar produto
+### adicionar produto
 ### PUT http://localhost:8082/pedidos/adicionarProduto/{idPedido}/{idProduto}/{quantidade}
 {
 "id": 1,
@@ -58,8 +61,9 @@ adicionar produto
 "fechado": true
 }
 
+*
 
-remover produto
+### remover produto
 ### PUT http://localhost:8082/pedidos/removerProduto/{idPedido}/{idProduto}/{quantidade}
 {
 "id": 1,
@@ -77,8 +81,9 @@ remover produto
 "fechado": true
 }
 
+*
 
-fechar pedido
+### fechar pedido
 ### PUT http://localhost:8082/pedidos/fecharPedido/{id}
 {
 "id": 1,
@@ -96,12 +101,14 @@ fechar pedido
 "fechado": true
 }
 
+*
 
-obter os produtos criados
+### obter os produtos criados
 ### GET http://localhost:8082/produtos
 
+*
 
-criar novo produto
+### criar novo produto
 ### POST http://localhost:8082/produtos
 {
 "id": 1,
