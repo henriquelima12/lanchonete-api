@@ -18,11 +18,14 @@
 obter os pedidos criados
 ### GET http://localhost:8082/pedidos
 
+
 calcular preço pela lista de pedidos
 ### GET http://localhost:8082/pedidos/calcularPreco/{id}
 
+
 calcular preço pelo id
 ### GET http://localhost:8082/pedidos/calcularPrecoById/{id}
+
 
 criar novo pedido
 ### POST http://localhost:8082/pedidos
@@ -35,6 +38,7 @@ criar novo pedido
 "fechado": false
 }
 
+
 adicionar produto
 ### PUT http://localhost:8082/pedidos/adicionarProduto/{idPedido}/{idProduto}/{quantidade}
 {
@@ -42,7 +46,7 @@ adicionar produto
 "produtos": [
   {
   "id": 1,
-  "nome": "teste",
+  "nome": "xburger",
   "preco": 10.00,
   "quantidade": 2
   }
@@ -53,6 +57,7 @@ adicionar produto
 "fechado": true
 }
 
+
 remover produto
 ### PUT http://localhost:8082/pedidos/removerProduto/{idPedido}/{idProduto}/{quantidade}
 {
@@ -60,7 +65,7 @@ remover produto
 "produtos": [
   {
   "id": 1,
-  "nome": "teste",
+  "nome": "xburger",
   "preco": 10.00,
   "quantidade": 1
   }
@@ -70,6 +75,7 @@ remover produto
 "troco": 5.00,
 "fechado": true
 }
+
 
 fechar pedido
 ### PUT http://localhost:8082/pedidos/fecharPedido/{id}
@@ -78,7 +84,7 @@ fechar pedido
 "produtos": [
   {
   "id": 1,
-  "nome": "teste",
+  "nome": "xburger",
   "preco": 10.00,
   "quantidade": 1
   }
@@ -89,14 +95,16 @@ fechar pedido
 "fechado": true
 }
 
+
 obter os produtos criados
 ### GET http://localhost:8082/produtos
+
 
 criar novo produto
 ### POST http://localhost:8082/produtos
 {
 "id": 1,
-"nome": "teste",
+"nome": "xburger",
 "preco": 5.00,
 "quantidade": 2
 }
