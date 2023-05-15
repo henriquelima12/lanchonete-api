@@ -15,7 +15,7 @@
 
 ## Endpoints da aplicação
 
-## obter os pedidos criados
+obter os pedidos criados
 ### GET http://localhost:8082/pedidos
 
 
