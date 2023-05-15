@@ -23,11 +23,6 @@ public class PedidoController {
     PedidoService pedidoService;
 	
 	@GetMapping("/")
-	public String getHello () {
-        return "Olá mundo!";
-    }
-	
-	@GetMapping("/get")
 	public List<Pedido> getPedidos (@RequestParam("idPedido")Long idPedido) {
         return pedidoService.getPedidos();
     }
