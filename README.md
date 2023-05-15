@@ -15,11 +15,11 @@
 
 ## Endpoints da aplicação
 
-###obter os pedidos criados
+### obter os pedidos criados
 ### GET http://localhost:8082/pedidos
 
 
-###calcular preço pela lista de pedidos
+### calcular preço pela lista de pedidos
 ### GET http://localhost:8082/pedidos/calcularPreco/{id}
 
 
