@@ -33,7 +33,7 @@ public class PedidoController {
     }
 
     @GetMapping("/calcularPrecoById/{id}")
-	public Double calcularPreco(@PathVariable Long id) {
+	public Double calcularPrecoById(@PathVariable Long id) {
         return pedidoService.calcularPrecoById(id);
     }
 	
