@@ -50,7 +50,6 @@ public class PedidoService {
 		pedido_.setPrecoTotal(pedido.getPrecoTotal());
 		pedido_.setTotalPago(pedido.getTotalPago());
 		pedido_.setTroco(pedido.getTroco());
-		pedido_.setFechado(pedido.getFechado());
 		pedidoRepository.save(pedido_);
 	}
 	
@@ -67,7 +66,6 @@ public class PedidoService {
 		pedido_.setPrecoTotal(pedido.getPrecoTotal());
 		pedido_.setTotalPago(pedido.getTotalPago());
 		pedido_.setTroco(pedido.getTroco());
-		pedido_.setFechado(pedido.getFechado());
 		pedidoRepository.save(pedido_);
 	}
 	
