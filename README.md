@@ -7,7 +7,7 @@
 ### Java 8 ou superior
 ### Maven 3.5 ou superior
 ### MYSQL versão 8.0 ou superior
-## Lombok 1.18 ou superior
+### Lombok 1.18 ou superior
 ### HTTP Client (Postman, Insomnia, etc...)
 
 
